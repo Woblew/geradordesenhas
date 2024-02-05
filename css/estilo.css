@@ -43,11 +43,7 @@
      input::placeholder{
        font-size: 20px;
       } 
-      
-      #passwordSize{
-        user-select: auto;
-      }
-
+    
       #button {
         font-size: 18px;
         margin-top: 40px;
