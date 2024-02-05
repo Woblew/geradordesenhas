@@ -26,7 +26,7 @@ function genPassword() {
     let size
     const sizeInput = document.getElementById("sizeInput").value;
 
-    if (!isNaN(sizeInput) && sizeInput !== "") {
+    if (!isNaN(sizeInput) && sizeInput !== "" && sizeInput <= 30) {
         size = sizeInput
     }
     else{
