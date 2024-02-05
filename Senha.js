@@ -11,6 +11,7 @@ function genPassword() {
     let pass = '';
     let strarray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '0123456789', '@#$!']
     const checkboxes = document.querySelectorAll('.deleteCheckbox');
+    const sizeInput = document.getElementById("sizeInput").value;
     let checked = []
     checkboxes.forEach(function(checkbox, index) {
         if (!checkbox.checked) {
@@ -20,13 +21,15 @@ function genPassword() {
         ]
       });
     strarray = Array.from(strarray).filter((element, index) => checked[index]);
-    if (strarray.length === 0 || sizeInput === 0){
+    console.log(strarray)
+    console.log(sizeInput)
+    console.log()
+    if (strarray.length == 0){
         return;
     }
     let consmet = false
     let str = strarray.join('')
     let size
-    const sizeInput = document.getElementById("sizeInput").value;
 
     if (!isNaN(sizeInput) && sizeInput !== "" && sizeInput <= 30) {
         size = sizeInput
@@ -35,7 +38,7 @@ function genPassword() {
         size = Math.floor(Math.random() * 7 + 18)
     }
     
-    while (consmet === false){
+    while (consmet == false){
         pass = ''
         for (let i = 1; i <= size; i++) {
             let char = Math.floor(Math.random()
