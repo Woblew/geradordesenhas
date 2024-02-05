@@ -32,3 +32,10 @@ function genPassword(size = Math.floor(Math.random() * 7 + 18)) {
     console.log(pass)
     return pass;
 }
+
+function copyPassword() {
+    var copyText = document.getElementById("password");
+    copyText.select();
+    document.execCommand("copy");  
+  }
+  
