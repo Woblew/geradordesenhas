@@ -7,11 +7,20 @@ function containsSingleCharacter(string, substring) {
     return false;
 }
 
-function genPassword(size = Math.floor(Math.random() * 7 + 18)) {
+function genPassword() {
     let pass = '';
     let strarray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '0123456789', '@#$!']
     let consmet = false
     let str = strarray.join('')
+    let size
+    const sizeInput = document.getElementById("sizeInput").value;
+
+    if (!isNaN(sizeInput) && sizeInput !== "") {
+        size = sizeInput
+    }
+    else{
+        size = Math.floor(Math.random() * 7 + 18)
+    }
     
     while (consmet === false){
         pass = ''
