@@ -1,5 +1,3 @@
-const readline = require("readline")
-
 function containsSingleCharacter(string, substring) {
     for (let i = 0; i < substring.length; i++) {
       if (string.includes(substring[i])) {
@@ -9,7 +7,7 @@ function containsSingleCharacter(string, substring) {
     return false;
 }
 
-function generatePass(size = Math.floor(Math.random() * 7 + 18)) {
+function genPassword(size = Math.floor(Math.random() * 7 + 18)) {
     let pass = '';
     let strarray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '0123456789', '@#$!']
     let consmet = false
@@ -30,10 +28,7 @@ function generatePass(size = Math.floor(Math.random() * 7 + 18)) {
                 }
         })
     }
-    console.log(consmet)
+    document.getElementById("password").value = pass;
+    console.log(pass)
     return pass;
 }
-
-const input = prompt();
-
-console.log(generatePass())
