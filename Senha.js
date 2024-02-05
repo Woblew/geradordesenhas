@@ -19,8 +19,10 @@ function genPassword() {
             checked[index] = false
         ]
       });
-    
-    strarray = Array.from(strarray).filter((element, index) => checked[index]);  
+    strarray = Array.from(strarray).filter((element, index) => checked[index]);
+    if (strarray.length === 0 || sizeInput === 0){
+        return;
+    }
     let consmet = false
     let str = strarray.join('')
     let size
