@@ -39,7 +39,7 @@
       padding: 20px;
       user-select: none;
       height: 50px;
-      width: 400px;
+      width: 430px;
       border-radius: 6px;
       border: none;
       border: 2px solid #0e0c14;
@@ -69,7 +69,7 @@
       }
       
        .btn2{
-         margin-left: 85px
+         margin-left: 113px
        }
       
       #button:hover {
