@@ -10,6 +10,17 @@ function containsSingleCharacter(string, substring) {
 function genPassword() {
     let pass = '';
     let strarray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '0123456789', '@#$!']
+    const checkboxes = document.querySelectorAll('.deleteCheckbox');
+    let checked = []
+    checkboxes.forEach(function(checkbox, index) {
+        if (!checkbox.checked) {
+        checked[index] = true
+        }else[
+            checked[index] = false
+        ]
+      });
+    
+    strarray = Array.from(strarray).filter((element, index) => checked[index]);  
     let consmet = false
     let str = strarray.join('')
     let size
@@ -26,7 +37,7 @@ function genPassword() {
         pass = ''
         for (let i = 1; i <= size; i++) {
             let char = Math.floor(Math.random()
-                * str.length + 1);
+                * str.length + 1) - 1;
             pass += str.charAt(char)
         }
         strarray.forEach( function(e){
